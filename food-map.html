@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" style="background-color:#FDF4EA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>美食地圖</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="max-w-md mx-auto overflow-x-hidden pb-32" style="background-color:#FDF4EA">
+  <a href="index.html"><img src="assets/header.png" class="w-full block -mt-[25px]" alt="回首頁"></a>
+  <a href="assets/food-maps/CocoCruise-food-map-1.png" download="CocoCruise-food-map-1.png"><img src="assets/food-maps/food-map-1.png" class="w-full block -mt-12" alt="Taiwan Breakfast Map"></a>
+  <a href="assets/food-maps/CocoCruise-food-map-2.png" download="CocoCruise-food-map-2.png"><img src="assets/food-maps/food-map-2.png" class="w-full block mt-[5px]" alt="Taiwan Night Market Map"></a>
+  <a href="assets/food-maps/CocoCruise-food-map-3.png" download="CocoCruise-food-map-3.png"><img src="assets/food-maps/food-map-3.png" class="w-full block mt-[5px]" alt="Taiwan Bento Map"></a>
+  <a href="assets/food-maps/CocoCruise-food-map-4.png" download="CocoCruise-food-map-4.png"><img src="assets/food-maps/food-map-4.png" class="w-full block mt-[5px]" alt="美食地圖 4"></a>
+  <a href="assets/food-maps/CocoCruise-food-map-5.png" download="CocoCruise-food-map-5.png"><img src="assets/food-maps/food-map-5.png" class="w-full block mt-[5px]" alt="美食地圖 5"></a>
+  <a href="assets/food-maps/CocoCruise-food-map-6.png" download="CocoCruise-food-map-6.png"><img src="assets/food-maps/food-map-6.png" class="w-full block mt-[5px]" alt="美食地圖 6"></a>
+  <a href="assets/food-maps/CocoCruise-food-map-7.png" download="CocoCruise-food-map-7.png"><img src="assets/food-maps/food-map-7.png" class="w-full block mt-[5px]" alt="美食地圖 7"></a>
+  <a href="assets/food-maps/CocoCruise-food-map-8.png" download="CocoCruise-food-map-8.png"><img src="assets/food-maps/food-map-8.png" class="w-full block mt-[5px]" alt="美食地圖 8"></a>
+  <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md flex">
+    <a href="food-map.html" class="flex-1"><img src="assets/icons/nav-food-map.png" class="w-full block" alt="美食"></a>
+    <a href="street-map.html" class="flex-1"><img src="assets/icons/nav-street-map.png" class="w-full block" alt="地圖"></a>
+    <a href="challenge.html" class="flex-1"><img src="assets/icons/nav-challenges.png" class="w-full block" alt="挑戰"></a>
+    <a href="survival-tools.html" class="flex-1"><img src="assets/icons/nav-survival-tools.png" class="w-full block" alt="工具"></a>
+    <a href="https://open.spotify.com/album/2KzchDDaH4IPe2OKY3rowy?si=k3n1w4fxTLmhR6EoYBVImg" class="flex-1"><img src="assets/icons/nav-music.png" class="w-full block" alt="音樂"></a>
+  </nav>
+  <script>
+    document.querySelectorAll('a[download]').forEach(link => {
+      link.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const url = link.href;
+        const filename = link.getAttribute('download');
+        try {
+          const response = await fetch(url);
+          if (!response.ok) throw new Error('HTTP ' + response.status);
+          const blob = await response.blob();
+          const reader = new FileReader();
+          reader.onloadend = () => {
+            const a = document.createElement('a');
+            a.href = reader.result;
+            a.download = filename;
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+          };
+          reader.onerror = () => { throw new Error('FileReader failed'); };
+          reader.readAsDataURL(blob);
+        } catch (err) {
+          console.error('下載失敗：', err);
+          alert('下載失敗，請檢查 console：' + err.message);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
