@@ -1,16 +1,17 @@
 import { NavLink } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 
-// Per-icon: size, idle motion, transformOrigin. Crop is wide so the illustration
-// has breathing room and isn't visually cut off.
+// All five icons share the same crop ratio and size; `zoom` only on icons
+// whose source PNG has unwanted edges that need to be clipped out.
+const SIZE_CLASS = 'h-[52px] sm:h-[60px] lg:h-[68px]';
+const CROP_PCT = 72;
+
 const items = [
   {
     to: '/food-map',
     src: import.meta.env.BASE_URL + 'assets/icons/nav-food-map.png',
     label: 'Food',
     alt: '美食',
-    cropPct: 72,
-    sizeClass: 'h-[52px] sm:h-[60px] lg:h-[68px]',
     origin: '50% 100%',
     idle: { scale: [1, 1.05, 1], rotate: [0, -1.5, 0, 1.5, 0] },
     duration: 3.2,
@@ -20,20 +21,15 @@ const items = [
     src: import.meta.env.BASE_URL + 'assets/icons/nav-street-map.png',
     label: 'Map',
     alt: '地圖',
-    cropPct: 72,
-    sizeClass: 'h-[52px] sm:h-[60px] lg:h-[68px]',
     origin: '20% 60%',
     idle: { rotate: [-3, 3, -3] },
     duration: 3.6,
-    zoom: 1.18,
   },
   {
     to: '/challenge',
     src: import.meta.env.BASE_URL + 'assets/icons/nav-challenges.png',
     label: 'Challenges',
     alt: '挑戰',
-    cropPct: 72,
-    sizeClass: 'h-[52px] sm:h-[60px] lg:h-[68px]',
     origin: '50% 100%',
     idle: { scale: [1, 1.06, 1], rotate: [-1, 1, -1] },
     duration: 2.6,
@@ -43,8 +39,6 @@ const items = [
     src: import.meta.env.BASE_URL + 'assets/icons/nav-survival-tools.png',
     label: 'Tools',
     alt: '工具',
-    cropPct: 72,
-    sizeClass: 'h-[52px] sm:h-[60px] lg:h-[68px]',
     origin: '50% 90%',
     idle: { rotate: [-3.5, 3.5, -3.5] },
     duration: 3.2,
@@ -55,8 +49,6 @@ const items = [
     src: import.meta.env.BASE_URL + 'assets/icons/nav-music.png',
     label: 'Music',
     alt: '音樂',
-    cropPct: 72,
-    sizeClass: 'h-[52px] sm:h-[60px] lg:h-[68px]',
     origin: '50% 90%',
     idle: { rotate: [-2.5, 2.5, -2.5], scale: [1, 1.04, 1] },
     duration: 2.8,
@@ -92,9 +84,9 @@ export default function BottomNav() {
               animate={isActive ? { scale: 1.08 } : { scale: 1 }}
             >
               <div
-                className={`block w-auto ${item.sizeClass}`}
+                className={`block w-auto ${SIZE_CLASS}`}
                 style={{
-                  aspectRatio: `1 / ${item.cropPct / 100}`,
+                  aspectRatio: `1 / ${CROP_PCT / 100}`,
                   overflow: 'hidden',
                 }}
               >

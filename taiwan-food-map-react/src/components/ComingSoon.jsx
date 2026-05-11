@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
 
-export default function ComingSoon({ heroSrc, heroAlt, heroClassName = '-mt-[40px]', tagline }) {
+export default function ComingSoon({ heroSrc, heroAlt, heroClassName = '-mt-[60px]', tagline }) {
   const reduce = useReducedMotion();
   return (
     <div className="px-2 sm:px-3">

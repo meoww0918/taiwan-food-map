@@ -94,7 +94,7 @@ export default function FoodMap() {
     <PageLayout bottomPadding="pb-36 lg:pb-32">
       <HeaderLink className="-mt-[25px] lg:-mt-[60px]" />
 
-      <div className="px-2 sm:px-3 mb-2 -mt-[30px] text-center">
+      <div className="px-2 sm:px-3 mb-2 -mt-[50px] text-center">
         <span
           className="inline-block text-[11px] uppercase tracking-[0.2em] font-semibold rounded-full px-3 py-1"
           style={{
