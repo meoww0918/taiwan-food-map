@@ -24,6 +24,7 @@ const items = [
     origin: '20% 60%',
     idle: { rotate: [-3, 3, -3] },
     duration: 3.6,
+    fit: 'contain',
   },
   {
     to: '/challenge',
@@ -42,7 +43,7 @@ const items = [
     origin: '50% 90%',
     idle: { rotate: [-3.5, 3.5, -3.5] },
     duration: 3.2,
-    zoom: 1.18,
+    fit: 'contain',
   },
   {
     to: '/music',
@@ -95,7 +96,7 @@ export default function BottomNav() {
                   alt={item.alt}
                   className="block w-full h-full"
                   style={{
-                    objectFit: 'cover',
+                    objectFit: item.fit ?? 'cover',
                     objectPosition: 'top center',
                     transformOrigin: item.origin,
                     opacity: isActive ? 1 : 0.85,
