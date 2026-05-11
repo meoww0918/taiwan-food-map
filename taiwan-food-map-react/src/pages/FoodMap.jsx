@@ -10,8 +10,8 @@ const maps = Array.from({ length: 8 }, (_, i) => {
   const n = i + 1;
   return {
     n,
-    thumb: `/assets/food-maps/food-map-${n}.png`,
-    full: `/assets/food-maps/CocoCruise-food-map-${n}.png`,
+    thumb: `${import.meta.env.BASE_URL}assets/food-maps/food-map-${n}.png`,
+    full: `${import.meta.env.BASE_URL}assets/food-maps/CocoCruise-food-map-${n}.png`,
     filename: `CocoCruise-food-map-${n}.png`,
     alt: `美食地圖 ${n}`,
   };

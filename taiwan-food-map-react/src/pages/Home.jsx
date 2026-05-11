@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <PageLayout bottomPadding="pb-36 lg:pb-32">
       <motion.img
-        src="/assets/header.png"
+        src={import.meta.env.BASE_URL + "assets/header.png"}
         className="w-full block -mt-[40px] lg:-mt-[60px] mb-1"
         alt="頁首"
         initial={{ opacity: 0, y: -10 }}
@@ -37,7 +37,7 @@ export default function Home() {
           <div className="lg:col-span-2">
             <SectionCard
               to="/food-map"
-              src="/assets/food-map.png"
+              src={import.meta.env.BASE_URL + "assets/food-map.png"}
               alt="美食地圖"
               ctaRegion={STD_CTA}
               ctaLabel="Explore Food Map"
@@ -48,7 +48,7 @@ export default function Home() {
 
           <SectionCard
             to="/street-map"
-            src="/assets/street-map.png"
+            src={import.meta.env.BASE_URL + "assets/street-map.png"}
             alt="街道地圖"
             ctaRegion={STD_CTA}
             ctaLabel="Explore Street Map"
@@ -57,7 +57,7 @@ export default function Home() {
           />
           <SectionCard
             to="/challenge"
-            src="/assets/challenge.png"
+            src={import.meta.env.BASE_URL + "assets/challenge.png"}
             alt="挑戰"
             ctaRegion={STD_CTA}
             ctaLabel="Start Challenge"
@@ -66,7 +66,7 @@ export default function Home() {
           />
           <SectionCard
             to="/survival-tools"
-            src="/assets/survival-tools.png"
+            src={import.meta.env.BASE_URL + "assets/survival-tools.png"}
             alt="生存工具"
             ctaRegion={STD_CTA}
             ctaLabel="Open Survival Tools"
@@ -75,7 +75,7 @@ export default function Home() {
           />
           <SectionCard
             to="/contact"
-            src="/assets/contact.png"
+            src={import.meta.env.BASE_URL + "assets/contact.png"}
             alt="聯絡資訊"
             ctaRegion={STD_CTA}
             ctaLabel="Get in Touch"
@@ -87,7 +87,7 @@ export default function Home() {
           <div className="lg:col-span-2">
             <SectionCard
               to="/music"
-              src="/assets/music.png"
+              src={import.meta.env.BASE_URL + "assets/music.png"}
               alt="音樂"
               ctaRegion={NO_CTA}
               hotspots={musicHotspots}

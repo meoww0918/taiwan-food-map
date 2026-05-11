@@ -5,7 +5,7 @@ export default function HeaderLink({ className = '-mt-[25px] lg:-mt-[60px]', alt
   return (
     <Link to="/" className="block">
       <motion.img
-        src="/assets/header.png"
+        src={import.meta.env.BASE_URL + "assets/header.png"}
         className={`w-full block ${className}`}
         alt={alt}
         whileHover={{ scale: 1.005 }}

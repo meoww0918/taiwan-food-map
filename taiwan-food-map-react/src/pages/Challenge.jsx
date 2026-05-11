@@ -7,7 +7,7 @@ export default function Challenge() {
     <PageLayout>
       <HeaderLink />
       <ComingSoon
-        heroSrc="/assets/challenge.png"
+        heroSrc={import.meta.env.BASE_URL + "assets/challenge.png"}
         heroAlt="挑戰"
         tagline="A new round of food challenges is brewing."
       />

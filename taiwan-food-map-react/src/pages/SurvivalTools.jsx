@@ -7,7 +7,7 @@ export default function SurvivalTools() {
     <PageLayout>
       <HeaderLink />
       <ComingSoon
-        heroSrc="/assets/survival-tools.png"
+        heroSrc={import.meta.env.BASE_URL + "assets/survival-tools.png"}
         heroAlt="生存工具"
         tagline="The phrasebook & emergency kit are being assembled."
       />

@@ -6,7 +6,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 const items = [
   {
     to: '/food-map',
-    src: '/assets/icons/nav-food-map.png',
+    src: import.meta.env.BASE_URL + 'assets/icons/nav-food-map.png',
     label: 'Food',
     alt: '美食',
     cropPct: 72,
@@ -17,7 +17,7 @@ const items = [
   },
   {
     to: '/street-map',
-    src: '/assets/icons/nav-street-map.png',
+    src: import.meta.env.BASE_URL + 'assets/icons/nav-street-map.png',
     label: 'Map',
     alt: '地圖',
     cropPct: 72,
@@ -28,7 +28,7 @@ const items = [
   },
   {
     to: '/challenge',
-    src: '/assets/icons/nav-challenges.png',
+    src: import.meta.env.BASE_URL + 'assets/icons/nav-challenges.png',
     label: 'Challenges',
     alt: '挑戰',
     cropPct: 72,
@@ -39,7 +39,7 @@ const items = [
   },
   {
     to: '/survival-tools',
-    src: '/assets/icons/nav-survival-tools.png',
+    src: import.meta.env.BASE_URL + 'assets/icons/nav-survival-tools.png',
     label: 'Tools',
     alt: '工具',
     cropPct: 72,
@@ -50,7 +50,7 @@ const items = [
   },
   {
     to: '/music',
-    src: '/assets/icons/nav-music.png',
+    src: import.meta.env.BASE_URL + 'assets/icons/nav-music.png',
     label: 'Music',
     alt: '音樂',
     cropPct: 72,

@@ -139,7 +139,7 @@ function MusicHero({ reduce }) {
       transition={{ duration: 0.45, ease: 'easeOut' }}
     >
       <img
-        src="/assets/music.png"
+        src={import.meta.env.BASE_URL + "assets/music.png"}
         alt="音樂"
         className="w-full block select-none"
         draggable={false}

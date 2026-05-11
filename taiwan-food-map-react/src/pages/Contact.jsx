@@ -7,7 +7,7 @@ export default function Contact() {
     <PageLayout>
       <HeaderLink />
       <ComingSoon
-        heroSrc="/assets/contact.png"
+        heroSrc={import.meta.env.BASE_URL + "assets/contact.png"}
         heroAlt="聯絡資訊"
         tagline="Drop us a line — the contact form is on its way."
       />

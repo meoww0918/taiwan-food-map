@@ -7,7 +7,7 @@ export default function StreetMap() {
     <PageLayout>
       <HeaderLink />
       <ComingSoon
-        heroSrc="/assets/street-map.png"
+        heroSrc={import.meta.env.BASE_URL + "assets/street-map.png"}
         heroAlt="街道地圖"
         tagline="Hand-drawn streets are still being painted."
       />
