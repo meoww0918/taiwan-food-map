@@ -1,0 +1,32 @@
+{
+  "name": "Coco Cruise · Taiwan Food Map",
+  "short_name": "Coco Cruise",
+  "description": "Hand-drawn Taiwan food maps, street guides, survival tools, and lo-fi music by Coco Cruise.",
+  "start_url": "/taiwan-food-map/",
+  "scope": "/taiwan-food-map/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FCF4EA",
+  "theme_color": "#FCF4EA",
+  "lang": "zh-Hant",
+  "icons": [
+    {
+      "src": "/taiwan-food-map/assets/icons/nav-music.png",
+      "sizes": "315x312",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/taiwan-food-map/assets/icons/nav-food-map.png",
+      "sizes": "316x312",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/taiwan-food-map/assets/icons/nav-challenges.png",
+      "sizes": "315x312",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

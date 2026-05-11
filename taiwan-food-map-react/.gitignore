@@ -1,0 +1,8 @@
+node_modules
+dist
+dist-ssr
+screenshots
+.DS_Store
+*.local
+.vscode
+.claude

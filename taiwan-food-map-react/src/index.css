@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background-color: #fdf4ea;
+  /* prevent horizontal scroll while still allowing hover transforms inside the page */
+  overflow-x: hidden;
+}
+
+/* Themed focus ring — dashed cream/tan, matches the cassette frame's inner border */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px dashed #c4884f;
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+@media (hover: none) {
+  a:focus-visible,
+  button:focus-visible {
+    outline-color: rgba(196, 136, 79, 0.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
