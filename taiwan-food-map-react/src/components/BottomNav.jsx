@@ -1,8 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 
-// All five icons share the same crop ratio and size; `zoom` only on icons
-// whose source PNG has unwanted edges that need to be clipped out.
+// All five icons share the same crop ratio and size.
 const SIZE_CLASS = 'h-[52px] sm:h-[60px] lg:h-[68px]';
 const CROP_PCT = 72;
 
@@ -24,7 +23,6 @@ const items = [
     origin: '20% 60%',
     idle: { rotate: [-3, 3, -3] },
     duration: 3.6,
-    fit: 'contain',
   },
   {
     to: '/challenge',
@@ -43,7 +41,6 @@ const items = [
     origin: '50% 90%',
     idle: { rotate: [-3.5, 3.5, -3.5] },
     duration: 3.2,
-    fit: 'contain',
   },
   {
     to: '/music',
@@ -84,38 +81,30 @@ export default function BottomNav() {
               transition={transition}
               animate={isActive ? { scale: 1.08 } : { scale: 1 }}
             >
-              <div
+              <motion.img
+                src={item.src}
+                alt={item.alt}
                 className={`block w-auto ${SIZE_CLASS}`}
                 style={{
                   aspectRatio: `1 / ${CROP_PCT / 100}`,
-                  overflow: 'hidden',
+                  objectFit: 'cover',
+                  objectPosition: 'top center',
+                  transformOrigin: item.origin,
+                  opacity: isActive ? 1 : 0.85,
                 }}
-              >
-                <motion.img
-                  src={item.src}
-                  alt={item.alt}
-                  className="block w-full h-full"
-                  style={{
-                    objectFit: item.fit ?? 'cover',
-                    objectPosition: 'top center',
-                    transformOrigin: item.origin,
-                    opacity: isActive ? 1 : 0.85,
-                  }}
-                  animate={
-                    isActive && !reduce
-                      ? {
-                          ...item.idle,
-                          ...(item.idle.scale ? {} : { scale: item.zoom ?? 1 }),
-                          transition: {
-                            duration: item.duration,
-                            repeat: Infinity,
-                            ease: 'easeInOut',
-                          },
-                        }
-                      : { scale: item.zoom ?? 1, rotate: 0 }
-                  }
-                />
-              </div>
+                animate={
+                  isActive && !reduce
+                    ? {
+                        ...item.idle,
+                        transition: {
+                          duration: item.duration,
+                          repeat: Infinity,
+                          ease: 'easeInOut',
+                        },
+                      }
+                    : { scale: 1, rotate: 0 }
+                }
+              />
 
               <span
                 className="text-[10px] sm:text-[11px] font-semibold tracking-wide select-none"
