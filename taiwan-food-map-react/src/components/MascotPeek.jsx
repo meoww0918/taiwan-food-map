@@ -74,39 +74,20 @@ function CocoSticker() {
         meow~ 嗨 👋
       </motion.div>
 
-      {/* The cat sticker */}
-      <motion.svg
-        width="72"
-        height="72"
-        viewBox="0 0 72 72"
+      <motion.img
+        src={import.meta.env.BASE_URL + 'assets/coco.png'}
+        alt=""
+        width={72}
+        height={72}
+        draggable={false}
         animate={{ rotate: [-2, 2, -2] }}
         transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
-        style={{ filter: 'drop-shadow(0 8px 14px rgba(120,72,28,0.35))' }}
-      >
-        {/* Head */}
-        <ellipse cx="36" cy="40" rx="26" ry="22" fill="#F0CDA0" stroke="#7A4B22" strokeWidth="2" />
-        {/* Ears */}
-        <path d="M14 28 L18 8 L30 22 Z" fill="#F0CDA0" stroke="#7A4B22" strokeWidth="2" strokeLinejoin="round" />
-        <path d="M58 28 L54 8 L42 22 Z" fill="#F0CDA0" stroke="#7A4B22" strokeWidth="2" strokeLinejoin="round" />
-        <path d="M19 23 L19 13 L26 21 Z" fill="#E89A7E" />
-        <path d="M53 23 L53 13 L46 21 Z" fill="#E89A7E" />
-        {/* Eyes (blink) */}
-        <motion.g
-          animate={{ scaleY: [1, 1, 0.05, 1, 1] }}
-          transition={{ duration: 3.2, repeat: Infinity, times: [0, 0.85, 0.9, 0.95, 1] }}
-          style={{ transformOrigin: '36px 38px' }}
-        >
-          <ellipse cx="27" cy="38" rx="2.2" ry="3" fill="#3A2410" />
-          <ellipse cx="45" cy="38" rx="2.2" ry="3" fill="#3A2410" />
-        </motion.g>
-        {/* Nose + mouth */}
-        <path d="M34 44 Q36 46 38 44" stroke="#7A4B22" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-        <ellipse cx="36" cy="43" rx="1.6" ry="1" fill="#D85C3B" />
-        <path d="M36 45 Q33 49 30 47 M36 45 Q39 49 42 47" stroke="#7A4B22" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-        {/* Cheek dots */}
-        <circle cx="22" cy="45" r="2.2" fill="#F4B58A" opacity="0.7" />
-        <circle cx="50" cy="45" r="2.2" fill="#F4B58A" opacity="0.7" />
-      </motion.svg>
+        style={{
+          display: 'block',
+          filter: 'drop-shadow(0 8px 14px rgba(120,72,28,0.35))',
+          userSelect: 'none',
+        }}
+      />
     </div>
   );
 }
