@@ -47,7 +47,7 @@ export default function CatEasterEgg({ position = 'left' }) {
 
   return (
     <div
-      className={`fixed z-30 ${position === 'left' ? 'left-3' : 'right-3'}`}
+      className={`fixed z-30 ${position === 'left' ? 'left-3 lg:left-[calc(50%-500px)]' : 'right-3 lg:right-[calc(50%-500px)]'}`}
       style={{ bottom: 'calc(120px + env(safe-area-inset-bottom))' }}
     >
       <motion.button

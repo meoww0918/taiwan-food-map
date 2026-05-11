@@ -37,8 +37,8 @@ export default function MascotPeek() {
           type="button"
           aria-label="Coco says hi"
           onClick={() => setVisible(false)}
-          className="fixed z-30 cursor-pointer"
-          style={{ right: 12, bottom: 'calc(120px + env(safe-area-inset-bottom))' }}
+          className="fixed z-30 cursor-pointer right-3 lg:right-[calc(50%-500px)]"
+          style={{ bottom: 'calc(120px + env(safe-area-inset-bottom))' }}
           initial={{ x: 80, opacity: 0, rotate: 18 }}
           animate={{ x: 0, opacity: 1, rotate: -2 }}
           exit={{ x: 80, opacity: 0, rotate: 18 }}
