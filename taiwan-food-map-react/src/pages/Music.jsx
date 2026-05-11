@@ -24,7 +24,7 @@ export default function Music() {
     <PageLayout bottomPadding="pb-36 lg:pb-32">
       <HeaderLink className="-mt-[25px] lg:-mt-[60px]" />
 
-      <div className="px-2 sm:px-3">
+      <div className="px-2 sm:px-3 -mt-[30px]">
         {/* Hero illustration with Apple/Spotify hotspots */}
         <MusicHero reduce={reduce} />
 
