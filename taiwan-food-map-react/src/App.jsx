@@ -24,18 +24,20 @@ export default function App() {
       <CatEasterEgg position="left" />
       {location.pathname === '/' && <OnboardingBubble />}
 
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/food-map" element={<FoodMap />} />
-          <Route path="/street-map" element={<StreetMap />} />
-          <Route path="/challenge" element={<Challenge />} />
-          <Route path="/survival-tools" element={<SurvivalTools />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/music" element={<Music />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </AnimatePresence>
+      <div className="lg:[zoom:0.75]">
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/food-map" element={<FoodMap />} />
+            <Route path="/street-map" element={<StreetMap />} />
+            <Route path="/challenge" element={<Challenge />} />
+            <Route path="/survival-tools" element={<SurvivalTools />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/music" element={<Music />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AnimatePresence>
+      </div>
     </div>
   );
 }

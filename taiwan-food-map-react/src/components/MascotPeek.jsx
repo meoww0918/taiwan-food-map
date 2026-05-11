@@ -77,9 +77,10 @@ function CocoSticker() {
       <motion.img
         src={import.meta.env.BASE_URL + 'assets/coco.png'}
         alt=""
-        width={72}
-        height={72}
+        width={45}
+        height={45}
         draggable={false}
+        className="w-[45px] h-[45px] md:w-[72px] md:h-[72px]"
         animate={{ rotate: [-2, 2, -2] }}
         transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
         style={{

@@ -10,7 +10,7 @@ const items = [
     label: 'Food',
     alt: '美食',
     cropPct: 72,
-    sizeClass: 'h-[46px] sm:h-[54px] lg:h-[62px]',
+    sizeClass: 'h-[52px] sm:h-[60px] lg:h-[68px]',
     origin: '50% 100%',
     idle: { scale: [1, 1.05, 1], rotate: [0, -1.5, 0, 1.5, 0] },
     duration: 3.2,
@@ -21,10 +21,11 @@ const items = [
     label: 'Map',
     alt: '地圖',
     cropPct: 72,
-    sizeClass: 'h-[44px] sm:h-[52px] lg:h-[60px]',
+    sizeClass: 'h-[52px] sm:h-[60px] lg:h-[68px]',
     origin: '20% 60%',
     idle: { rotate: [-3, 3, -3] },
     duration: 3.6,
+    zoom: 1.18,
   },
   {
     to: '/challenge',
@@ -32,7 +33,7 @@ const items = [
     label: 'Challenges',
     alt: '挑戰',
     cropPct: 72,
-    sizeClass: 'h-[48px] sm:h-[56px] lg:h-[64px]',
+    sizeClass: 'h-[52px] sm:h-[60px] lg:h-[68px]',
     origin: '50% 100%',
     idle: { scale: [1, 1.06, 1], rotate: [-1, 1, -1] },
     duration: 2.6,
@@ -43,10 +44,11 @@ const items = [
     label: 'Tools',
     alt: '工具',
     cropPct: 72,
-    sizeClass: 'h-[44px] sm:h-[52px] lg:h-[60px]',
+    sizeClass: 'h-[52px] sm:h-[60px] lg:h-[68px]',
     origin: '50% 90%',
     idle: { rotate: [-3.5, 3.5, -3.5] },
     duration: 3.2,
+    zoom: 1.18,
   },
   {
     to: '/music',
@@ -54,7 +56,7 @@ const items = [
     label: 'Music',
     alt: '音樂',
     cropPct: 72,
-    sizeClass: 'h-[48px] sm:h-[56px] lg:h-[64px]',
+    sizeClass: 'h-[52px] sm:h-[60px] lg:h-[68px]',
     origin: '50% 90%',
     idle: { rotate: [-2.5, 2.5, -2.5], scale: [1, 1.04, 1] },
     duration: 2.8,
@@ -69,7 +71,7 @@ export default function BottomNav() {
   const reduce = useReducedMotion();
   return (
     <nav
-      className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[874px] lg:max-w-[1180px] flex items-end justify-around px-1 sm:px-3 z-50"
+      className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[874px] lg:max-w-[1180px] flex items-end justify-evenly px-1 sm:px-3 z-50"
       style={{
         // Match the icon PNG's exact cream background (#FCF4EA) so the
         // icons blend in seamlessly with no visible rectangular box.
@@ -89,31 +91,38 @@ export default function BottomNav() {
               transition={transition}
               animate={isActive ? { scale: 1.08 } : { scale: 1 }}
             >
-              <motion.img
-                src={item.src}
-                alt={item.alt}
+              <div
                 className={`block w-auto ${item.sizeClass}`}
                 style={{
-                  // Crop with object-fit on the img so animations aren't clipped by a parent
                   aspectRatio: `1 / ${item.cropPct / 100}`,
-                  objectFit: 'cover',
-                  objectPosition: 'top center',
-                  transformOrigin: item.origin,
-                  opacity: isActive ? 1 : 0.85,
+                  overflow: 'hidden',
                 }}
-                animate={
-                  isActive && !reduce
-                    ? {
-                        ...item.idle,
-                        transition: {
-                          duration: item.duration,
-                          repeat: Infinity,
-                          ease: 'easeInOut',
-                        },
-                      }
-                    : { scale: 1, rotate: 0 }
-                }
-              />
+              >
+                <motion.img
+                  src={item.src}
+                  alt={item.alt}
+                  className="block w-full h-full"
+                  style={{
+                    objectFit: 'cover',
+                    objectPosition: 'top center',
+                    transformOrigin: item.origin,
+                    opacity: isActive ? 1 : 0.85,
+                  }}
+                  animate={
+                    isActive && !reduce
+                      ? {
+                          ...item.idle,
+                          ...(item.idle.scale ? {} : { scale: item.zoom ?? 1 }),
+                          transition: {
+                            duration: item.duration,
+                            repeat: Infinity,
+                            ease: 'easeInOut',
+                          },
+                        }
+                      : { scale: item.zoom ?? 1, rotate: 0 }
+                  }
+                />
+              </div>
 
               <span
                 className="text-[10px] sm:text-[11px] font-semibold tracking-wide select-none"
