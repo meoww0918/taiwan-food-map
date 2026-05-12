@@ -2,6 +2,13 @@ import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from 'framer-motion';
 
+// floatingFoods[i].anchor controls which point on the cutout sits at (left, top).
+const FOOD_ANCHOR = {
+  top:    'translate(-50%, 0)',
+  center: 'translate(-50%, -50%)',
+  bottom: 'translate(-50%, -100%)',
+};
+
 /**
  * SectionCard wraps an illustrated PNG and layers interactive elements:
  *  - whole-card lift/tilt + soft shadow on hover
@@ -114,7 +121,7 @@ export default function SectionCard({
             left: `${food.region.left * 100}%`,
             top: `${food.region.top * 100}%`,
             width: `${food.region.width * 100}%`,
-            transform: 'translate(-50%, -100%)',
+            transform: FOOD_ANCHOR[food.anchor || 'bottom'],
           }}
         >
           <motion.img
