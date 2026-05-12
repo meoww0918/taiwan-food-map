@@ -1,5 +1,5 @@
 /* Coco Cruise service worker — minimal cache-then-network for offline access. */
-const CACHE_VERSION = 'coco-v2';
+const CACHE_VERSION = 'coco-v3';
 
 // Paths relative to SW scope (works under any base path, e.g. /taiwan-food-map/).
 const CORE_ASSETS_REL = [
