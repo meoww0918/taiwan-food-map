@@ -30,15 +30,9 @@ const FOOD_FLOATS = [
     sway: { rotate: [-4, 4, -4], duration: 2.8, delay: 0 },
   },
   {
-    src: import.meta.env.BASE_URL + 'assets/boba.png',
-    alt: '珍珠奶茶',
-    region: { left: 0.683, top: 0.389, width: 0.15 },
-    sway: { rotate: [-5, 5, -5], duration: 2.6, delay: 0.3 },
-  },
-  {
     src: import.meta.env.BASE_URL + 'assets/dofu.png',
     alt: '臭豆腐',
-    region: { left: 0.838, top: 0.426, width: 0.30 },
+    region: { left: 0.838, top: 0.430, width: 0.30 },
     sway: { rotate: [3, -3, 3], duration: 3.2, delay: 0.6 },
   },
   {
@@ -71,6 +65,13 @@ const FOOD_FLOATS = [
     alt: '鳳梨酥',
     region: { left: 0.882, top: 0.935, width: 0.20 },
     sway: { rotate: [3, -3, 3], duration: 2.5, delay: 0.7 },
+  },
+  // Boba is last so it renders on top of nearby foods.
+  {
+    src: import.meta.env.BASE_URL + 'assets/boba.png',
+    alt: '珍珠奶茶',
+    region: { left: 0.683, top: 0.389, width: 0.15 },
+    sway: { rotate: [-5, 5, -5], duration: 2.6, delay: 0.3 },
   },
 ];
 
