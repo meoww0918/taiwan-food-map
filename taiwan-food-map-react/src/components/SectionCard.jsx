@@ -107,32 +107,37 @@ export default function SectionCard({
       <img src={src} alt={alt} className="w-full block rounded-[14px] select-none" draggable={false} />
 
       {!reduce && floatingFoods.map((food) => (
-        <motion.img
+        <div
           key={food.src}
-          src={food.src}
-          alt={food.alt || ''}
-          aria-hidden={!food.alt}
-          className="absolute block pointer-events-none select-none"
-          draggable={false}
+          className="absolute pointer-events-none"
           style={{
             left: `${food.region.left * 100}%`,
             top: `${food.region.top * 100}%`,
             width: `${food.region.width * 100}%`,
-            translateX: '-50%',
-            translateY: '-50%',
-            filter: 'drop-shadow(0 6px 10px rgba(120,72,28,0.28))',
+            transform: 'translate(-50%, -50%)',
           }}
-          animate={{
-            rotate: food.sway?.rotate ?? [-6, 6, -6],
-            y: food.sway?.y ?? [-3, 3, -3],
-          }}
-          transition={{
-            duration: food.sway?.duration ?? 2.4,
-            delay: food.sway?.delay ?? 0,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
+        >
+          <motion.img
+            src={food.src}
+            alt={food.alt || ''}
+            aria-hidden={!food.alt}
+            className="block w-full select-none"
+            draggable={false}
+            style={{
+              filter: 'drop-shadow(0 6px 10px rgba(120,72,28,0.28))',
+            }}
+            animate={{
+              rotate: food.sway?.rotate ?? [-6, 6, -6],
+              y: food.sway?.y ?? [-3, 3, -3],
+            }}
+            transition={{
+              duration: food.sway?.duration ?? 2.4,
+              delay: food.sway?.delay ?? 0,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+          />
+        </div>
       ))}
 
       {!reduce && (

@@ -18,55 +18,55 @@ const musicHotspots = [
   { label: 'Open in Spotify', href: SPOTIFY_URL, region: SPOTIFY_REGION, external: true },
 ];
 
-// Positions tuned to overlay each food directly on top of its illustration
-// in food-map.png (882x484). Three rows roughly at y=0.28 / 0.55 / 0.82.
+// Positions are center-points (0..1 of the card), widths are fractions of card width.
+// Tuned so each cutout sits directly over its drawing in food-map.png (882x484).
 const FOOD_FLOATS = [
   {
     src: import.meta.env.BASE_URL + 'assets/beef-noodles.png',
     alt: '牛肉麵',
-    region: { left: 0.50, top: 0.28, width: 0.16 },
+    region: { left: 0.57, top: 0.34, width: 0.21 },
     sway: { rotate: [-4, 4, -4], duration: 2.8, delay: 0 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/boba.png',
     alt: '珍珠奶茶',
-    region: { left: 0.64, top: 0.32, width: 0.09 },
+    region: { left: 0.66, top: 0.50, width: 0.12 },
     sway: { rotate: [-5, 5, -5], duration: 2.6, delay: 0.3 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/dofu.png',
     alt: '臭豆腐',
-    region: { left: 0.79, top: 0.27, width: 0.18 },
+    region: { left: 0.83, top: 0.32, width: 0.24 },
     sway: { rotate: [3, -3, 3], duration: 3.2, delay: 0.6 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/pork-rice.png',
     alt: '滷肉飯',
-    region: { left: 0.50, top: 0.55, width: 0.14 },
+    region: { left: 0.53, top: 0.66, width: 0.19 },
     sway: { rotate: [-3, 3, -3], duration: 2.9, delay: 0.2 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/oyster.png',
     alt: '蚵仔煎',
-    region: { left: 0.73, top: 0.55, width: 0.16 },
+    region: { left: 0.69, top: 0.66, width: 0.21 },
     sway: { rotate: [4, -4, 4], duration: 2.7, delay: 0.5 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/fried-chicken.png',
     alt: '雞排',
-    region: { left: 0.48, top: 0.80, width: 0.11 },
+    region: { left: 0.56, top: 0.86, width: 0.15 },
     sway: { rotate: [4, -4, 4], duration: 3.0, delay: 0.4 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/mango-ice.png',
     alt: '芒果冰',
-    region: { left: 0.66, top: 0.82, width: 0.14 },
+    region: { left: 0.71, top: 0.86, width: 0.19 },
     sway: { rotate: [-4, 4, -4], duration: 3.1, delay: 0.1 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/pineapple.png',
     alt: '鳳梨酥',
-    region: { left: 0.84, top: 0.83, width: 0.12 },
+    region: { left: 0.87, top: 0.86, width: 0.16 },
     sway: { rotate: [3, -3, 3], duration: 2.5, delay: 0.7 },
   },
 ];
@@ -84,7 +84,7 @@ export default function Home() {
         draggable={false}
       />
 
-      <div className="px-2 sm:px-3 -mt-[80px] lg:-mt-[120px]">
+      <div className="px-2 sm:px-3 -mt-[55px] lg:-mt-[120px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-5">
           {/* Hero — full width on desktop too. food-map is the only working content page so it leads. */}
           <div className="lg:col-span-2">
