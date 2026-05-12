@@ -6,7 +6,7 @@ const STD_CTA = { left: 0.035, top: 0.585, width: 0.345, height: 0.255 };
 const NO_CTA = { left: 0, top: 0, width: 0, height: 0 };
 
 const SPOTIFY_URL =
-  'https://open.spotify.com/album/2KzchDDaH4IPe2OKY3rowy?si=k3n1w4fxTLmhR6EoYBVImg';
+  'https://open.spotify.com/playlist/3Jq6wWjY1lyJkQCI30VmLf?si=oDbiGWWbRzS45bo_neLhbw';
 const APPLE_MUSIC_URL =
   'https://music.apple.com/us/search?term=Coco%20Cruise%20Lofi%20Travel%20House';
 
@@ -44,7 +44,7 @@ const FOOD_FLOATS = [
   {
     src: import.meta.env.BASE_URL + 'assets/pork-rice.png',
     alt: '滷肉飯',
-    region: { left: 0.586, top: 0.698, width: 0.24 },
+    region: { left: 0.586, top: 0.704, width: 0.24 },
     sway: { rotate: [-3, 3, -3], duration: 2.9, delay: 0.2 },
   },
   {
@@ -56,7 +56,7 @@ const FOOD_FLOATS = [
   {
     src: import.meta.env.BASE_URL + 'assets/fried-chicken.png',
     alt: '雞排',
-    region: { left: 0.477, top: 0.640, width: 0.19 },
+    region: { left: 0.477, top: 0.634, width: 0.19 },
     anchor: 'top',
     sway: { rotate: [4, -4, 4], duration: 3.0, delay: 0.4 },
   },
