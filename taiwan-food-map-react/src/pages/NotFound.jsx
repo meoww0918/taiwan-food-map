@@ -9,7 +9,7 @@ export default function NotFound() {
     <PageLayout>
       <HeaderLink />
 
-      <div className="px-4 -mt-[25px] lg:-mt-[90px] flex flex-col items-center text-center gap-4">
+      <div className="px-4 mt-2 lg:-mt-[90px] flex flex-col items-center text-center gap-4">
         <motion.div
           className="relative"
           initial={{ opacity: 0, scale: 0.85, rotate: -4 }}
