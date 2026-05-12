@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 
 // All five icons share the same crop ratio and size.
-const SIZE_CLASS = 'h-[52px] sm:h-[60px] lg:h-[68px]';
+const SIZE_CLASS = 'h-[44px] sm:h-[52px] lg:h-[60px]';
 const CROP_PCT = 72;
 
 const items = [
