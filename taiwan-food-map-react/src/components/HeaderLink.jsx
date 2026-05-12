@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-export default function HeaderLink({ className = '-mt-[25px] lg:-mt-[60px]', alt = '回首頁' }) {
+export default function HeaderLink({ className = '-mt-[25px] lg:-mt-[100px]', alt = '回首頁' }) {
   return (
     <Link to="/" className="block">
       <motion.img

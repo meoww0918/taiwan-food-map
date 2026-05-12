@@ -18,12 +18,63 @@ const musicHotspots = [
   { label: 'Open in Spotify', href: SPOTIFY_URL, region: SPOTIFY_REGION, external: true },
 ];
 
+const FOOD_FLOATS = [
+  {
+    src: import.meta.env.BASE_URL + 'assets/beef-noodles.png',
+    alt: '牛肉麵',
+    region: { left: 0.48, top: 0.42, width: 0.11 },
+    sway: { rotate: [-4, 4, -4], duration: 2.8, delay: 0 },
+  },
+  {
+    src: import.meta.env.BASE_URL + 'assets/boba.png',
+    alt: '珍珠奶茶',
+    region: { left: 0.62, top: 0.45, width: 0.09 },
+    sway: { rotate: [-5, 5, -5], duration: 2.6, delay: 0.3 },
+  },
+  {
+    src: import.meta.env.BASE_URL + 'assets/dofu.png',
+    alt: '臭豆腐',
+    region: { left: 0.78, top: 0.42, width: 0.11 },
+    sway: { rotate: [3, -3, 3], duration: 3.2, delay: 0.6 },
+  },
+  {
+    src: import.meta.env.BASE_URL + 'assets/fried-chicken.png',
+    alt: '雞排',
+    region: { left: 0.93, top: 0.50, width: 0.09 },
+    sway: { rotate: [4, -4, 4], duration: 3.0, delay: 0.4 },
+  },
+  {
+    src: import.meta.env.BASE_URL + 'assets/pork-rice.png',
+    alt: '滷肉飯',
+    region: { left: 0.50, top: 0.80, width: 0.11 },
+    sway: { rotate: [-3, 3, -3], duration: 2.9, delay: 0.2 },
+  },
+  {
+    src: import.meta.env.BASE_URL + 'assets/oyster.png',
+    alt: '蚵仔煎',
+    region: { left: 0.78, top: 0.83, width: 0.11 },
+    sway: { rotate: [4, -4, 4], duration: 2.7, delay: 0.5 },
+  },
+  {
+    src: import.meta.env.BASE_URL + 'assets/mango-ice.png',
+    alt: '芒果冰',
+    region: { left: 0.93, top: 0.80, width: 0.10 },
+    sway: { rotate: [-4, 4, -4], duration: 3.1, delay: 0.1 },
+  },
+  {
+    src: import.meta.env.BASE_URL + 'assets/pineapple.png',
+    alt: '鳳梨酥',
+    region: { left: 0.36, top: 0.85, width: 0.09 },
+    sway: { rotate: [3, -3, 3], duration: 2.5, delay: 0.7 },
+  },
+];
+
 export default function Home() {
   return (
     <PageLayout bottomPadding="pb-36 lg:pb-32">
       <motion.img
         src={import.meta.env.BASE_URL + "assets/header.png"}
-        className="w-full block -mt-[40px] lg:-mt-[60px] mb-1"
+        className="w-full block -mt-[40px] lg:-mt-[100px] mb-1"
         alt="頁首"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -31,7 +82,7 @@ export default function Home() {
         draggable={false}
       />
 
-      <div className="px-2 sm:px-3 -mt-[80px]">
+      <div className="px-2 sm:px-3 -mt-[80px] lg:-mt-[120px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-5">
           {/* Hero — full width on desktop too. food-map is the only working content page so it leads. */}
           <div className="lg:col-span-2">
@@ -42,6 +93,7 @@ export default function Home() {
               ctaRegion={STD_CTA}
               ctaLabel="Explore Food Map"
               ctaText="Explore Now →"
+              floatingFoods={FOOD_FLOATS}
               index={0}
             />
           </div>

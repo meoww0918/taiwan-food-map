@@ -22,9 +22,9 @@ export default function Music() {
   const reduce = useReducedMotion();
   return (
     <PageLayout bottomPadding="pb-36 lg:pb-32">
-      <HeaderLink className="-mt-[25px] lg:-mt-[60px]" />
+      <HeaderLink className="-mt-[25px] lg:-mt-[100px]" />
 
-      <div className="px-2 sm:px-3 -mt-[80px]">
+      <div className="px-2 sm:px-3 -mt-[80px] lg:-mt-[120px]">
         {/* Hero illustration with Apple/Spotify hotspots */}
         <MusicHero reduce={reduce} />
 
