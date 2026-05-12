@@ -38,7 +38,7 @@ const FOOD_FLOATS = [
   {
     src: import.meta.env.BASE_URL + 'assets/dofu.png',
     alt: '臭豆腐',
-    region: { left: 0.835, top: 0.414, width: 0.30 },
+    region: { left: 0.835, top: 0.420, width: 0.30 },
     sway: { rotate: [3, -3, 3], duration: 3.2, delay: 0.6 },
   },
   {
