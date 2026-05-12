@@ -32,7 +32,6 @@ const items = [
     origin: '50% 100%',
     idle: { scale: [1, 1.06, 1], rotate: [-1, 1, -1] },
     duration: 2.6,
-    fit: 'contain',
   },
   {
     to: '/survival-tools',
@@ -88,7 +87,7 @@ export default function BottomNav() {
                 className={`block w-auto ${SIZE_CLASS}`}
                 style={{
                   aspectRatio: `1 / ${CROP_PCT / 100}`,
-                  objectFit: item.fit ?? 'cover',
+                  objectFit: 'contain',
                   objectPosition: 'top center',
                   transformOrigin: item.origin,
                   opacity: isActive ? 1 : 0.85,
