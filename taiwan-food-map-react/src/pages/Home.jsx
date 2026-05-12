@@ -18,55 +18,57 @@ const musicHotspots = [
   { label: 'Open in Spotify', href: SPOTIFY_URL, region: SPOTIFY_REGION, external: true },
 ];
 
-// Positions are center-points (0..1 of the card), widths are fractions of card width.
-// Tuned so each cutout sits directly over its drawing in food-map.png (882x484).
+// region.left / region.top are the BOTTOM-CENTER anchor of each cutout
+// (0..1 of card dimensions). Extracted from #FF2600 dots user painted at the
+// bottom-centre of each food in food-map.png (882×484). SectionCard applies
+// transform: translate(-50%, -100%) so the food "sits" on the anchor.
 const FOOD_FLOATS = [
   {
     src: import.meta.env.BASE_URL + 'assets/beef-noodles.png',
     alt: '牛肉麵',
-    region: { left: 0.57, top: 0.34, width: 0.26 },
+    region: { left: 0.543, top: 0.425, width: 0.26 },
     sway: { rotate: [-4, 4, -4], duration: 2.8, delay: 0 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/boba.png',
     alt: '珍珠奶茶',
-    region: { left: 0.66, top: 0.50, width: 0.15 },
+    region: { left: 0.683, top: 0.369, width: 0.15 },
     sway: { rotate: [-5, 5, -5], duration: 2.6, delay: 0.3 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/dofu.png',
     alt: '臭豆腐',
-    region: { left: 0.83, top: 0.32, width: 0.30 },
+    region: { left: 0.832, top: 0.384, width: 0.30 },
     sway: { rotate: [3, -3, 3], duration: 3.2, delay: 0.6 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/pork-rice.png',
     alt: '滷肉飯',
-    region: { left: 0.53, top: 0.66, width: 0.24 },
+    region: { left: 0.586, top: 0.698, width: 0.24 },
     sway: { rotate: [-3, 3, -3], duration: 2.9, delay: 0.2 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/oyster.png',
     alt: '蚵仔煎',
-    region: { left: 0.73, top: 0.66, width: 0.26 },
+    region: { left: 0.877, top: 0.660, width: 0.26 },
     sway: { rotate: [4, -4, 4], duration: 2.7, delay: 0.5 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/fried-chicken.png',
     alt: '雞排',
-    region: { left: 0.56, top: 0.86, width: 0.19 },
+    region: { left: 0.425, top: 0.940, width: 0.19 },
     sway: { rotate: [4, -4, 4], duration: 3.0, delay: 0.4 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/mango-ice.png',
     alt: '芒果冰',
-    region: { left: 0.71, top: 0.86, width: 0.24 },
+    region: { left: 0.665, top: 0.919, width: 0.24 },
     sway: { rotate: [-4, 4, -4], duration: 3.1, delay: 0.1 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/pineapple.png',
     alt: '鳳梨酥',
-    region: { left: 0.87, top: 0.86, width: 0.20 },
+    region: { left: 0.887, top: 0.907, width: 0.20 },
     sway: { rotate: [3, -3, 3], duration: 2.5, delay: 0.7 },
   },
 ];

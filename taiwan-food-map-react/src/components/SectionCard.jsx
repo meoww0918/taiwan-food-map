@@ -114,7 +114,7 @@ export default function SectionCard({
             left: `${food.region.left * 100}%`,
             top: `${food.region.top * 100}%`,
             width: `${food.region.width * 100}%`,
-            transform: 'translate(-50%, -50%)',
+            transform: 'translate(-50%, -100%)',
           }}
         >
           <motion.img
