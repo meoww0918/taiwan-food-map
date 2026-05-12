@@ -32,13 +32,13 @@ const FOOD_FLOATS = [
   {
     src: import.meta.env.BASE_URL + 'assets/boba.png',
     alt: '珍珠奶茶',
-    region: { left: 0.683, top: 0.369, width: 0.15 },
+    region: { left: 0.683, top: 0.389, width: 0.15 },
     sway: { rotate: [-5, 5, -5], duration: 2.6, delay: 0.3 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/dofu.png',
     alt: '臭豆腐',
-    region: { left: 0.832, top: 0.384, width: 0.30 },
+    region: { left: 0.832, top: 0.404, width: 0.30 },
     sway: { rotate: [3, -3, 3], duration: 3.2, delay: 0.6 },
   },
   {
@@ -50,25 +50,25 @@ const FOOD_FLOATS = [
   {
     src: import.meta.env.BASE_URL + 'assets/oyster.png',
     alt: '蚵仔煎',
-    region: { left: 0.877, top: 0.660, width: 0.26 },
+    region: { left: 0.877, top: 0.680, width: 0.26 },
     sway: { rotate: [4, -4, 4], duration: 2.7, delay: 0.5 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/fried-chicken.png',
     alt: '雞排',
-    region: { left: 0.425, top: 0.940, width: 0.19 },
+    region: { left: 0.425, top: 0.960, width: 0.19 },
     sway: { rotate: [4, -4, 4], duration: 3.0, delay: 0.4 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/mango-ice.png',
     alt: '芒果冰',
-    region: { left: 0.665, top: 0.919, width: 0.24 },
+    region: { left: 0.665, top: 0.939, width: 0.24 },
     sway: { rotate: [-4, 4, -4], duration: 3.1, delay: 0.1 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/pineapple.png',
     alt: '鳳梨酥',
-    region: { left: 0.887, top: 0.907, width: 0.20 },
+    region: { left: 0.887, top: 0.927, width: 0.20 },
     sway: { rotate: [3, -3, 3], duration: 2.5, delay: 0.7 },
   },
 ];
