@@ -38,13 +38,13 @@ const FOOD_FLOATS = [
   {
     src: import.meta.env.BASE_URL + 'assets/dofu.png',
     alt: '臭豆腐',
-    region: { left: 0.832, top: 0.408, width: 0.30 },
+    region: { left: 0.835, top: 0.414, width: 0.30 },
     sway: { rotate: [3, -3, 3], duration: 3.2, delay: 0.6 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/pork-rice.png',
     alt: '滷肉飯',
-    region: { left: 0.586, top: 0.714, width: 0.24 },
+    region: { left: 0.586, top: 0.718, width: 0.24 },
     sway: { rotate: [-3, 3, -3], duration: 2.9, delay: 0.2 },
   },
   {
