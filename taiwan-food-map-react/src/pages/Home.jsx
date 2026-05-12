@@ -38,19 +38,19 @@ const FOOD_FLOATS = [
   {
     src: import.meta.env.BASE_URL + 'assets/dofu.png',
     alt: '臭豆腐',
-    region: { left: 0.835, top: 0.420, width: 0.30 },
+    region: { left: 0.838, top: 0.426, width: 0.30 },
     sway: { rotate: [3, -3, 3], duration: 3.2, delay: 0.6 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/pork-rice.png',
     alt: '滷肉飯',
-    region: { left: 0.586, top: 0.718, width: 0.24 },
+    region: { left: 0.586, top: 0.722, width: 0.24 },
     sway: { rotate: [-3, 3, -3], duration: 2.9, delay: 0.2 },
   },
   {
     src: import.meta.env.BASE_URL + 'assets/oyster.png',
     alt: '蚵仔煎',
-    region: { left: 0.877, top: 0.680, width: 0.26 },
+    region: { left: 0.877, top: 0.682, width: 0.26 },
     sway: { rotate: [4, -4, 4], duration: 2.7, delay: 0.5 },
   },
   {
@@ -63,7 +63,7 @@ const FOOD_FLOATS = [
   {
     src: import.meta.env.BASE_URL + 'assets/mango-ice.png',
     alt: '芒果冰',
-    region: { left: 0.667, top: 0.947, width: 0.24 },
+    region: { left: 0.668, top: 0.949, width: 0.24 },
     sway: { rotate: [-4, 4, -4], duration: 3.1, delay: 0.1 },
   },
   {
