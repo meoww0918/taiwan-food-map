@@ -31,7 +31,7 @@ export default function Home() {
         draggable={false}
       />
 
-      <div className="px-2 sm:px-3 -mt-[50px]">
+      <div className="px-2 sm:px-3 -mt-[80px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-5">
           {/* Hero — full width on desktop too. food-map is the only working content page so it leads. */}
           <div className="lg:col-span-2">
