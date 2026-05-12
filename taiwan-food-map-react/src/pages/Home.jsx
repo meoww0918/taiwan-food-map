@@ -56,7 +56,7 @@ const FOOD_FLOATS = [
   {
     src: import.meta.env.BASE_URL + 'assets/fried-chicken.png',
     alt: '雞排',
-    region: { left: 0.67, top: 0.985, width: 0.19 },
+    region: { left: 0.75, top: 0.985, width: 0.19 },
     sway: { rotate: [4, -4, 4], duration: 3.0, delay: 0.4 },
   },
   {
